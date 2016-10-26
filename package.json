@@ -23,5 +23,9 @@
   "homepage": "https://github.com/KevinAdu/anki-styles#readme",
   "dependencies": {
     "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "run-sequence": "^1.2.2"
   }
 }
