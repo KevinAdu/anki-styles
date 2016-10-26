@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/KevinAdu/anki-styles/issues"
   },
-  "homepage": "https://github.com/KevinAdu/anki-styles#readme"
+  "homepage": "https://github.com/KevinAdu/anki-styles#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
