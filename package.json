@@ -1,0 +1,31 @@
+{
+  "name": "anki-styles",
+  "version": "0.0.0",
+  "description": " ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinAdu/anki-styles.git"
+  },
+  "keywords": [
+    "anki",
+    "template",
+    "styles"
+  ],
+  "author": "Kevin Adu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinAdu/anki-styles/issues"
+  },
+  "homepage": "https://github.com/KevinAdu/anki-styles#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "run-sequence": "^1.2.2"
+  }
+}
