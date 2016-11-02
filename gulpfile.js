@@ -5,11 +5,17 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 
 var paths = {
-  fonts: ['src/fonts/**/*']
+  fonts: ['src/fonts/**/*'],
+  templates: ['src/templates/**/*']
 };
 
 gulp.task('clean', function() {
   return del('dist');
+});
+
+gulp.task('html', function() {
+  return gulp.src(paths.templates)
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('fonts', function() {
@@ -27,5 +33,5 @@ gulp.task('server', function() {
 });
 
 gulp.task('default', function() {
-  sequence('clean', 'fonts', 'server');
+  sequence('clean', 'fonts', 'html', 'server');
 });
