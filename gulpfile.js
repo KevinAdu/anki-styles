@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var del = require('del');
 var sequence = require('run-sequence');
+var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
 
 var paths = {
   fonts: ['src/fonts/**/*']
@@ -12,9 +14,18 @@ gulp.task('clean', function() {
 
 gulp.task('fonts', function() {
   return gulp.src(paths.fonts)
-    .pipe(gulp.dest('dist/fonts'));
+  .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('server', function() {
+  browserSync.init({
+    port: 8888,
+    server: {
+      baseDir: "./dist"
+    }
+  });
 });
 
 gulp.task('default', function() {
-  sequence('clean', 'fonts');
+  sequence('clean', 'fonts', 'server');
 });
