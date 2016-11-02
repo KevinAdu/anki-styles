@@ -18,6 +18,11 @@ gulp.task('html', function() {
   .pipe(gulp.dest('docs'));
 });
 
+gulp.task('html', function() {
+  return gulp.src(paths.templates)
+  .pipe(gulp.dest('dist'));
+});
+
 gulp.task('fonts', function() {
   return gulp.src(paths.fonts)
   .pipe(gulp.dest('docs/fonts'));
