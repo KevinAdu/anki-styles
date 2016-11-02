@@ -10,24 +10,24 @@ var paths = {
 };
 
 gulp.task('clean', function() {
-  return del('dist');
+  return del('docs');
 });
 
 gulp.task('html', function() {
   return gulp.src(paths.templates)
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('docs'));
 });
 
 gulp.task('fonts', function() {
   return gulp.src(paths.fonts)
-  .pipe(gulp.dest('dist/fonts'));
+  .pipe(gulp.dest('docs/fonts'));
 });
 
 gulp.task('server', function() {
   browserSync.init({
     port: 8888,
     server: {
-      baseDir: "./dist"
+      baseDir: "./docs"
     }
   });
 });
