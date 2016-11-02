@@ -18,15 +18,10 @@ gulp.task('html', function() {
   .pipe(gulp.dest('docs'));
 });
 
-gulp.task('html', function() {
-  return gulp.src(paths.templates)
-  .pipe(gulp.dest('dist'));
-});
-
-gulp.task('fonts', function() {
-  return gulp.src(paths.fonts)
-  .pipe(gulp.dest('docs/fonts'));
-});
+// gulp.task('fonts', function() {
+//   return gulp.src(paths.fonts)
+//   .pipe(gulp.dest('docs/fonts'));
+// });
 
 gulp.task('server', function() {
   browserSync.init({
@@ -38,5 +33,5 @@ gulp.task('server', function() {
 });
 
 gulp.task('default', function() {
-  sequence('clean', 'fonts', 'html', 'server');
+  sequence('clean', 'html', 'server');
 });
