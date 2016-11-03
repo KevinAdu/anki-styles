@@ -50,7 +50,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function() {
-  sequence('clean', 'html', 'server');
+  sequence('clean', 'html', 'sass', 'server');
 });
 
 gulp.task('default', ['build'], function() {
