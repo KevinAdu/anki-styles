@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var del = require('del');
 var sequence = require('run-sequence');
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
+var browser = require('browser-sync').create();
 
 var paths = {
   fonts: ['src/fonts/**/*'],
@@ -24,7 +24,7 @@ gulp.task('html', function() {
 // });
 
 gulp.task('server', function() {
-  browserSync.init({
+  browser.init({
     port: 8888,
     server: {
       baseDir: "./docs"
@@ -32,6 +32,10 @@ gulp.task('server', function() {
   });
 });
 
-gulp.task('default', function() {
+gulp.task('build', function() {
   sequence('clean', 'html', 'server');
+});
+
+gulp.task('default', ['build'], function() {
+  gulp.watch(['src/templates/**/*.html'], ['html', browser.reload]);
 });
