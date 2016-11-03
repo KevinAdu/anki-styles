@@ -22,7 +22,7 @@ gulp.task('html', function() {
   .pipe(gulp.dest('docs'));
 });
 
-gulp.task('sass', function () {
+gulp.task('scss', function () {
   return gulp.src('./src/scss/**/*.scss')
   .pipe(sass({
     style: 'expanded',
@@ -50,7 +50,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function() {
-  sequence('clean', 'html', 'sass', 'server');
+  sequence('clean', 'html', 'scss', 'server');
 });
 
 gulp.task('default', ['build'], function() {
