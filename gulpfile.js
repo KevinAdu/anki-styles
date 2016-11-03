@@ -55,4 +55,5 @@ gulp.task('build', function() {
 
 gulp.task('default', ['build'], function() {
   gulp.watch(['src/templates/**/*.html'], ['html', browser.reload]);
+  gulp.watch(['src/scss/**/*.scss'], ['scss', browser.reload]);
 });
