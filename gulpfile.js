@@ -35,10 +35,10 @@ gulp.task('scss', function () {
   .pipe(gulp.dest('./docs/css'));
 });
 
-// gulp.task('fonts', function() {
-//   return gulp.src(paths.fonts)
-//   .pipe(gulp.dest('docs/fonts'));
-// });
+gulp.task('fonts', function() {
+  return gulp.src(paths.fonts)
+  .pipe(gulp.dest('docs/fonts'));
+});
 
 gulp.task('server', function() {
   browser.init({
@@ -50,7 +50,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function() {
-  sequence('clean', 'html', 'scss', 'server');
+  sequence('clean', 'html', 'fonts', 'scss', 'server');
 });
 
 gulp.task('default', ['build'], function() {
