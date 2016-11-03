@@ -1,13 +1,17 @@
 var gulp = require('gulp');
 var del = require('del');
 var sequence = require('run-sequence');
-var gulp = require('gulp');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 var browser = require('browser-sync').create();
 
 var paths = {
   fonts: ['src/fonts/**/*'],
   templates: ['src/templates/**/*']
 };
+
+var browserVersions = ['last 2 versions', 'ie >= 9'];
 
 gulp.task('clean', function() {
   return del('docs');
@@ -16,6 +20,19 @@ gulp.task('clean', function() {
 gulp.task('html', function() {
   return gulp.src(paths.templates)
   .pipe(gulp.dest('docs'));
+});
+
+gulp.task('sass', function () {
+  return gulp.src('./src/scss/**/*.scss')
+  .pipe(sass({
+    style: 'expanded',
+    sourceComments: 'normal'
+  }).on('error', sass.logError))
+  .pipe(autoprefixer({
+    browsers: browserVersions
+  }))
+  .pipe(cleanCSS({compatibility: 'ie9'}))
+  .pipe(gulp.dest('./docs/css'));
 });
 
 // gulp.task('fonts', function() {
