@@ -1,1 +1,1 @@
-html{box-sizing:border-box;font-size:14px}*,::after,::before{box-sizing:inherit}body{margin:0 auto}
+@font-face{font-family:"Noto Sans CJK";src:url(/fonts/NotoSansCJK-JP/NotoSansCJKjp-Regular.otf) format("otf")}html{box-sizing:border-box;font-size:14px}*,::after,::before{box-sizing:inherit}body{font-family:"Noto Sans CJK",Arial;margin:0 auto}

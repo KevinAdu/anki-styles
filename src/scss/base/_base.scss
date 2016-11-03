@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Noto Sans CJK";
+  src: url("/fonts/NotoSansCJK-JP/NotoSansCJKjp-Regular.otf") format("otf");
+}
+
 html {
   box-sizing: border-box;
   font-size: 14px;
@@ -10,5 +15,6 @@ html {
 }
 
 body {
+  font-family: "Noto Sans CJK", "Arial";
   margin: 0 auto;
 }
