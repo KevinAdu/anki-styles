@@ -4,18 +4,52 @@
   text-align: center;
   border: 1px solid #555;
   height: 640px;
-  background-color: #2196f3;
-  position: relative;
 }
 
-.kanji-reading {
-  font-size: 3.733rem;
+.card-front {
+  height: 100%;
   background-color: #2196f3;
-  padding: 0.5em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  position: relative;
+
+  > .reading-kanji {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+
+.card-back {
+  background-color: #fafafa;
+  color: #212121;
+  height: 100%;
+
+  > .reading-kanji {
+    background-color: #2196f3;
+  }
+}
+
+.reading {
+  padding: 1.6rem 0;
+}
+
+.reading-kanji {
+  font-size: 3.733rem;
   color: #fafafa;
+}
+
+.reading-hiragana {
+  font-size: 2.266rem;
+  color: #1976D2;
+  padding-bottom: 0.8666rem;
+}
+
+.reading-english {
+  font-size: 1.6rem;
+  color: #212121;
+}
+
+hr {
+  margin: 0;
+  border: solid 1px #9E9E9E;
 }
