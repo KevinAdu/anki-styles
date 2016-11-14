@@ -1,0 +1,18 @@
+.reading {
+  padding: $reading-padding;
+}
+
+.reading-kanji {
+  font-size: $reading-kanji-font-size;
+  color: $reading-kanji-color;
+}
+
+.reading-hiragana {
+  font-size: $reading-hiragana-font-size;
+  color: $secondary-color;
+  padding-bottom: $reading-hiragana-margin-bottom;
+}
+
+.reading-english {
+  font-size: $reading-english-font-size;
+}

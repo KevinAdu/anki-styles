@@ -1,21 +1,26 @@
 .card {
-  width: 360px;
-  margin: 0 auto;
   text-align: center;
-  border: 1px solid #555;
-  height: 640px;
-  background-color: #2196f3;
-  position: relative;
 }
 
-.kanji-reading {
-  font-size: 3.733rem;
-  background-color: #2196f3;
-  padding: 0.5em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  color: #fafafa;
+.card-front {
+  height: 100%;
+  background-color: $card-front-background-color;
+  position: relative;
+
+  > .reading-kanji {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+
+.card-back {
+  background-color: $card-back-background-color;
+  color: $card-back-color;
+  height: 100%;
+
+  > .reading-kanji {
+    background-color: $card-front-background-color;
+  }
 }
