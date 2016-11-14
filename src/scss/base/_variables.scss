@@ -1,0 +1,36 @@
+//1 - Colors
+//1 - Global Styles
+//3 - Card Container
+//4 - Card
+//5 - Reading
+
+//1 - Colors
+$primary-blue-color: #2196f3;
+$secondary-color: #1976d2;
+$nero: #212121;
+$grey: #9e9e9e;
+$white: #fafafa;
+
+//2 - Global Styles
+$base-font-size: 15px;
+$horizontal-rule-border: solid 1px $grey;
+
+//3 - Card Container
+$card-container-width: 360px;
+$card-container-border: 1px solid $grey;
+$card-container-height: 640px;
+
+//4 - Card
+$card-front-background-color: $primary-blue-color;
+$card-back-background-color: $white;
+$card-back-color: $nero;
+
+//5 - Reading
+$reading-padding: 1.6rem 0;
+$reading-kanji-font-size: 3.733rem;
+$reading-kanji-color: $white;
+
+$reading-hiragana-font-size: 2.266rem;
+$reading-hiragana-margin-bottom: 0.8666rem;
+
+$reading-english-font-size: 1.6rem;

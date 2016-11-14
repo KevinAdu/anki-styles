@@ -4,7 +4,7 @@
 
 .card-front {
   height: 100%;
-  background-color: #2196f3;
+  background-color: $card-front-background-color;
   position: relative;
 
   > .reading-kanji {
@@ -16,11 +16,11 @@
 }
 
 .card-back {
-  background-color: #fafafa;
-  color: #212121;
+  background-color: $card-back-background-color;
+  color: $card-back-color;
   height: 100%;
 
   > .reading-kanji {
-    background-color: #2196f3;
+    background-color: $card-front-background-color;
   }
 }

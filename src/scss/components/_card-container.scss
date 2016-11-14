@@ -1,6 +1,6 @@
 .card-container {
-  width: 360px;
+  width: $card-container-width;
   margin: 0 auto;
-  border: 1px solid #555;
-  height: 640px;
+  border: $card-container-border;
+  height: $card-container-height;
 }
