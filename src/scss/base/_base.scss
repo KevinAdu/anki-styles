@@ -5,7 +5,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: $base-font-size;
 }
 
 *,
@@ -22,5 +22,5 @@ body {
 
 hr {
   margin: 0;
-  border: solid 1px #9E9E9E;
+  border: $horizontal-rule-border;
 }
