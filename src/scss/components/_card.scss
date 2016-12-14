@@ -7,7 +7,12 @@
   background-color: $card-front-background-color;
   position: relative;
 
-  > .reading-kanji {
+  &.card-reverse {
+    background-color: $card-front-reverse-background-color;
+  }
+
+
+  > .reading {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -19,6 +24,18 @@
   background-color: $card-back-background-color;
   color: $card-back-color;
   height: 100%;
+
+  &.card-reverse {
+    background-color: $card-back-reverse-background-color;
+
+    > .reading-english {
+      background-color: $card-front-reverse-background-color;
+    }
+
+    > .reading-hiragana {
+      color: $reading-kanji-color;
+    }
+  }
 
   > .reading-kanji {
     background-color: $card-front-background-color;
