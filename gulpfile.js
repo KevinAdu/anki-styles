@@ -25,13 +25,12 @@ gulp.task('html', function() {
 gulp.task('scss', function () {
   return gulp.src('./src/scss/**/*.scss')
   .pipe(sass({
-    style: 'expanded',
-    sourceComments: 'normal'
+    style: 'expanded'
   }).on('error', sass.logError))
   .pipe(autoprefixer({
     browsers: browserVersions
   }))
-  .pipe(cleanCSS({compatibility: 'ie9'}))
+  // .pipe(cleanCSS({compatibility: 'ie9'}))
   .pipe(gulp.dest('./docs/css'));
 });
 

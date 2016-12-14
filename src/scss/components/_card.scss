@@ -7,7 +7,22 @@
   background-color: $card-front-background-color;
   position: relative;
 
-  > .reading-kanji {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 0.3));
+  }
+
+  &.card-reverse {
+    background-color: $card-front-reverse-background-color;
+  }
+
+
+  > .reading {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -19,6 +34,29 @@
   background-color: $card-back-background-color;
   color: $card-back-color;
   height: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 0.3));
+  }
+
+  &.card-reverse {
+    background-color: $card-back-reverse-background-color;
+
+    > .reading-english {
+      background-color: $card-front-reverse-background-color;
+    }
+
+    > .reading-hiragana {
+      color: $reading-kanji-color;
+    }
+  }
 
   > .reading-kanji {
     background-color: $card-front-background-color;
