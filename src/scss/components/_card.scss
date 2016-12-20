@@ -1,5 +1,13 @@
 .card {
   text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-align: stretch;
+  -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
 }
 
 .card-front {
@@ -7,26 +15,8 @@
   background-color: $card-front-background-color;
   position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 0.3));
-  }
-
   &.card-reverse {
     background-color: $card-front-reverse-background-color;
-  }
-
-
-  > .reading {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
   }
 }
 
@@ -35,16 +25,6 @@
   color: $card-back-color;
   height: 100%;
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 0.3));
-  }
 
   &.card-reverse {
     background-color: $card-back-reverse-background-color;
