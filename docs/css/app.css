@@ -417,8 +417,7 @@ html {
 
 body {
   font-family: "Noto Sans CJK", "Arial";
-  margin: 0 auto;
-  padding: 1rem; }
+  margin: 0 auto; }
 
 hr {
   margin: 0;
@@ -431,42 +430,28 @@ hr {
   height: 640px; }
 
 .card {
-  text-align: center; }
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-align: stretch;
+  -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word; }
 
 .card-front {
   height: 100%;
   background-color: #2196f3;
   position: relative; }
-  .card-front::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)); }
   .card-front.card-reverse {
     background-color: #fafafa; }
-  .card-front > .reading {
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-    width: 100%; }
 
 .card-back {
   background-color: #fafafa;
   color: #212121;
   height: 100%;
   position: relative; }
-  .card-back::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)); }
   .card-back.card-reverse {
     background-color: #2196f3; }
     .card-back.card-reverse > .reading-english {
