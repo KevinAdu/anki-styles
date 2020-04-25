@@ -10,8 +10,6 @@ var paths = {
   templates: ['src/templates/**/*']
 };
 
-var browserVersions = ['last 2 versions', 'ie >= 9'];
-
 gulp.task('clean', function() {
   return del('docs');
 });
@@ -26,9 +24,7 @@ gulp.task('scss', function () {
   .pipe(sass({
     style: 'expanded'
   }).on('error', sass.logError))
-  .pipe(autoprefixer({
-    browsers: browserVersions
-  }))
+  .pipe(autoprefixer())
   // .pipe(cleanCSS({compatibility: 'ie9'}))
   .pipe(gulp.dest('./docs/css'));
 });
