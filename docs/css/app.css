@@ -3,17 +3,19 @@
   src: url("/fonts/NotoSansCJK-JP/_NotoSansCJKjp-Regular.otf") format("otf"); }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 15px; }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
 
 body {
   font-family: "Noto Sans CJK", "Arial";
-  margin: 0 auto; }
+  margin: 0; }
 
 hr {
   margin: 0;
@@ -27,12 +29,11 @@ hr {
 
 .card {
   text-align: center;
-  position: absolute;
-  width: 100%;
   height: 100%;
   display: -webkit-box;
   -webkit-box-align: stretch;
   -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
   word-wrap: break-word; }
 
 .card-front {
