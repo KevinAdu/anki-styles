@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var del = require('del');
-var sequence = require('run-sequence');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
@@ -10,8 +9,6 @@ var paths = {
   fonts: ['src/fonts/**/*'],
   templates: ['src/templates/**/*']
 };
-
-var browserVersions = ['last 2 versions', 'ie >= 9'];
 
 gulp.task('clean', function() {
   return del('docs');
@@ -27,9 +24,7 @@ gulp.task('scss', function () {
   .pipe(sass({
     style: 'expanded'
   }).on('error', sass.logError))
-  .pipe(autoprefixer({
-    browsers: browserVersions
-  }))
+  .pipe(autoprefixer())
   // .pipe(cleanCSS({compatibility: 'ie9'}))
   .pipe(gulp.dest('./docs/css'));
 });
@@ -48,11 +43,12 @@ gulp.task('server', function() {
   });
 });
 
-gulp.task('build', function() {
-  sequence('clean', 'html', 'fonts', 'scss', 'server');
-});
+gulp.task('build', gulp.series('clean', 'html', 'fonts', 'scss', 'server', function(done) {
+  done();
+}));
 
-gulp.task('default', ['build'], function() {
+gulp.task('default', gulp.series('build', function(done) {
   gulp.watch(['src/templates/**/*.html'], ['html', browser.reload]);
   gulp.watch(['src/scss/**/*.scss'], ['scss', browser.reload]);
-});
+  done();
+}));
