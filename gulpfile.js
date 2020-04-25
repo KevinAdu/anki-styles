@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var del = require('del');
-var sequence = require('run-sequence');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
@@ -48,11 +47,12 @@ gulp.task('server', function() {
   });
 });
 
-gulp.task('build', function() {
-  sequence('clean', 'html', 'fonts', 'scss', 'server');
-});
+gulp.task('build', gulp.series('clean', 'html', 'fonts', 'scss', 'server', function(done) {
+  done();
+}));
 
-gulp.task('default', ['build'], function() {
+gulp.task('default', gulp.series('build', function(done) {
   gulp.watch(['src/templates/**/*.html'], ['html', browser.reload]);
   gulp.watch(['src/scss/**/*.scss'], ['scss', browser.reload]);
-});
+  done();
+}));
